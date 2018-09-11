@@ -127,6 +127,9 @@ export default class CountryPicker extends Component {
   constructor(props) {
     super(props)
     this.openModal = this.openModal.bind(this)
+    if (props.ref) {
+      props.ref(this)
+    }
 
     setCountries(props.flagType)
     let countryList = [...props.countryList]
